@@ -28,7 +28,7 @@ export class News extends Component {
 
     // life cycle method
     async componentDidMount() {
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=80b3b64179964eba8bfd1042b964c75b&pagesize=${this.props.pageSize}`;
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=80b3b64179964eba8bfd1042b964c75b&pagesize=${this.props.pageSize}`;
         this.setState({ loading: true });
         let data = await fetch(url);
         let parsedData = await data.json()
@@ -39,7 +39,7 @@ export class News extends Component {
         });
     }
     handleprev = async () => {
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=80b3b64179964eba8bfd1042b964c75b&page=${this.state.page - 1}&pagesize=${this.props.pageSize}`;
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=80b3b64179964eba8bfd1042b964c75b&page=${this.state.page - 1}&pagesize=${this.props.pageSize}`;
         this.setState({ loading: true });
         let data = await fetch(url);
         let parsedData = await data.json()
@@ -51,7 +51,7 @@ export class News extends Component {
     }
     handlenext = async () => {
         if (!(this.state.page + 1 > Math.ceil(this.state.totalResults / this.props.pageSize))) {
-            let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=80b3b64179964eba8bfd1042b964c75b&page=${this.state.page + 1}&pagesize=${this.props.pageSize}`;
+            let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=80b3b64179964eba8bfd1042b964c75b&page=${this.state.page + 1}&pagesize=${this.props.pageSize}`;
             this.setState({ loading: true });
             let data = await fetch(url);
             let parsedData = await data.json()
@@ -66,12 +66,13 @@ export class News extends Component {
         return (
             <>
                 <div className="container my-3">
-                    <h1 className="text-center">Fast Cards</h1>
+                    <h1 className="special"><img src="./card.png" alt="" /> Fast Cards</h1>
+                    
                     {this.state.loading && <Spinner />}
                     <div className="row">
                         {!this.state.loading && this.state.articles.map((element) => {
                             return <div className="col-md-4">
-                                <NewsItem title={element.title ? element.title.slice(0, 70) + "..." : "NEWSTROM Headlines "} description={element.description ? element.description.slice(0, 70) + "..." : "NEWSTROM Details"} imageurl={element.urlToImage} url={element.url} />
+                                <NewsItem title={element.title ? element.title.slice(0, 200) + "..." : "NEWSTROM Headlines "} description={element.description ? element.description.slice(0, 200) + "..." : "NEWSTROM Details"} imageurl={element.urlToImage} url={element.url} />
                             </div>
                         })}
                     </div>
