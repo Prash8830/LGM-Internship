@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-
+import {
+    Link
+  } from "react-router-dom";
 export class NavBar extends Component {
     render() {
         return (
@@ -7,36 +9,33 @@ export class NavBar extends Component {
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                     <div className="container-fluid">
                         <img src="favicon.png" alt="Logo" width="30" height="30" className="d-inline-block align-text-top" />
-                        <a className="navbar-brand" href="/">NEWSTROM</a>
+                        <Link className="navbar-brand" to="/">NEWSTROM</Link>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="/">Home</a>
+                                    <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="/">Business</a>
+                                    <Link className="nav-link active" aria-current="page" to="/business">Business</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="/">Entertainment</a>
+                                    <Link className="nav-link active" aria-current="page" to="/entertainment">Entertainment</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="/">General</a>
+                                    <Link className="nav-link active" aria-current="page" to="/science">Science</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="/">Science</a>
+                                    <Link className="nav-link active" aria-current="page" to="/sports">Sports</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="/">Sports</a>
+                                    <Link className="nav-link active" aria-current="page" to="/technology">Technology</Link>
                                 </li>
-                                <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="/">Technology</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="/">About</a>
-                                </li>
+                                {/* <li className="nav-item">
+                                    <Link className="nav-link active" aria-current="page" to="/about">About</Link>
+                                </li> */}
                             </ul>
 
                         </div>

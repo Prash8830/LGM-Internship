@@ -13,7 +13,7 @@ export class News extends Component {
     static propTypes ={
         country: PropTypes.string,
         pageSize: PropTypes.number
-    }
+    } 
 
     constructor() {
         super();
@@ -66,7 +66,7 @@ export class News extends Component {
         return (
             <>
                 <div className="container my-3">
-                    <h1 className="special"><img src="./card.png" alt="" /> Fast Cards</h1>
+                    <h1 className="special"><img src="card.png" alt="" /> Fast Cards</h1>
                     
                     {this.state.loading && <Spinner />}
                     <div className="row">
