@@ -24,11 +24,8 @@ export class News extends Component {
 
         }
     }
-
-
-    // life cycle method
-    async componentDidMount() {
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=80b3b64179964eba8bfd1042b964c75b&pagesize=${this.props.pageSize}`;
+    async updatenews(){
+        const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=80b3b64179964eba8bfd1042b964c75b&page=${this.state.page}&pagesize=${this.props.pageSize}`;
         this.setState({ loading: true });
         let data = await fetch(url);
         let parsedData = await data.json()
@@ -38,35 +35,25 @@ export class News extends Component {
             loading: false
         });
     }
+
+
+    // life cycle method
+    async componentDidMount() {
+        this.updatenews();  
+    }
     handleprev = async () => {
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=80b3b64179964eba8bfd1042b964c75b&page=${this.state.page - 1}&pagesize=${this.props.pageSize}`;
-        this.setState({ loading: true });
-        let data = await fetch(url);
-        let parsedData = await data.json()
-        this.setState({
-            page: this.state.page - 1,
-            articles: parsedData.articles,
-            loading: false
-        })
+        this.setState({page:this.state.page-1});
+        this.updatenews();
     }
     handlenext = async () => {
-        if (!(this.state.page + 1 > Math.ceil(this.state.totalResults / this.props.pageSize))) {
-            let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=80b3b64179964eba8bfd1042b964c75b&page=${this.state.page + 1}&pagesize=${this.props.pageSize}`;
-            this.setState({ loading: true });
-            let data = await fetch(url);
-            let parsedData = await data.json()
-            this.setState({
-                page: this.state.page + 1,
-                articles: parsedData.articles,
-                loading: false
-            })
-        }
+        this.setState({page:this.state.page+1});
+        this.updatenews();
     }
     render() {
         return (
             <>
                 <div className="container my-3">
-                    <h1 className="special"> Strom Cards  <img src="https://raw.githubusercontent.com/Prash8830/NEWSTROM/main/src/components/card.png" alt="" width="40" height="40"/> </h1>
+                    <h1 className=" nav-link active special"><img src="https://raw.githubusercontent.com/Prash8830/NEWSTROM/main/src/components/card.png" alt="" width="40" height="40"/> Strom Cards  <img src="https://raw.githubusercontent.com/Prash8830/NEWSTROM/main/src/components/card.png" alt="" width="40" height="40"/> </h1>
                     
                     {this.state.loading && <Spinner />}
                     <div className="row">

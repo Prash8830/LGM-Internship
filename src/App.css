@@ -39,6 +39,6 @@
 .special {
   text-align: center;
   color: gold;
-  font-family: cursive;
+  /* font-family: cursive; */
   margin: 50px;
 }

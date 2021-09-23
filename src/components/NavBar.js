@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {
     Link
-  } from "react-router-dom";
+} from "react-router-dom";
 export class NavBar extends Component {
     render() {
         return (
@@ -16,21 +16,27 @@ export class NavBar extends Component {
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
+                                    {/* <img src="https://raw.githubusercontent.com/Prash8830/NEWSTROM/main/Images/png/home.png" alt="Logo" width="30" height="30" className="d-inline-block align-text-top" /> */}
                                     <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                                 </li>
                                 <li className="nav-item">
+                                    {/* <img src="https://raw.githubusercontent.com/Prash8830/NEWSTROM/main/Images/png/003-analytics.png" alt="Logo" width="30" height="30" className="d-inline-block align-text-top" /> */}
                                     <Link className="nav-link active" aria-current="page" to="/business">Business</Link>
                                 </li>
                                 <li className="nav-item">
+                                    {/* <img src="https://raw.githubusercontent.com/Prash8830/NEWSTROM/main/Images/png/001-movies.png" alt="Logo" width="30" height="30" className="d-inline-block align-text-top" /> */}
                                     <Link className="nav-link active" aria-current="page" to="/entertainment">Entertainment</Link>
                                 </li>
                                 <li className="nav-item">
+                                    {/* <img src="https://raw.githubusercontent.com/Prash8830/NEWSTROM/main/Images/png/010-science-1.png" alt="Logo" width="30" height="30" className="d-inline-block align-text-top" /> */}
                                     <Link className="nav-link active" aria-current="page" to="/science">Science</Link>
                                 </li>
                                 <li className="nav-item">
+                                    {/* <img src="https://raw.githubusercontent.com/Prash8830/NEWSTROM/main/Images/png/004-sport.png" alt="Logo" width="30" height="30" className="d-inline-block align-text-top" /> */}
                                     <Link className="nav-link active" aria-current="page" to="/sports">Sports</Link>
                                 </li>
                                 <li className="nav-item">
+                                    {/* <img src="https://raw.githubusercontent.com/Prash8830/NEWSTROM/main/Images/png/project-management.png" alt="Logo" width="30" height="30" className="d-inline-block align-text-top" /> */}
                                     <Link className="nav-link active" aria-current="page" to="/technology">Technology</Link>
                                 </li>
                                 {/* <li className="nav-item">
