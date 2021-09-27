@@ -25,8 +25,8 @@ export class News extends Component {
         }
     }
     async updatenews() {
-        this.props.setProgress(10);
-        const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=80b3b64179964eba8bfd1042b964c75b&page=${this.state.page}&pagesize=${this.props.pageSize}`;
+        this.props.setProgress(35);
+        const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pagesize=${this.props.pageSize}`;
         this.setState({ loading: true });
         let data = await fetch(url);
         this.props.setProgress(30);
@@ -60,9 +60,9 @@ export class News extends Component {
     render() {
         return (
             <>
-                <h1 className="  special"><img src="https://raw.githubusercontent.com/Prash8830/NEWSTROM/main/src/components/card.png" alt="" width="40" height="40" /> Strom Cards </h1>
+                <h1 className="  special"><img src="https://raw.githubusercontent.com/Prash8830/NEWSTROM/main/src/components/card.png" alt="" width="40" height="40" /> Top Cards <img src="https://raw.githubusercontent.com/Prash8830/NEWSTROM/main/src/components/card.png" alt="" width="40" height="40" /></h1>
 
-                {this.state.loading && <Spinner />}
+                {/* {this.state.loading && <Spinner />} */}
                 <InfiniteScroll
                     dataLength={this.state.articles.length}
                     next={this.fetchMoreData}
