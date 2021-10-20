@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiddily - Business Solutions</title>
+    <link rel=icon href="https://cdn-icons-png.flaticon.com/512/4019/4019820.png" type="image/png">
+</head>
+<style>
+    .contai {
+        position: relative;
+        text-align: center;
+        color: white;
+
+    }
+
+    .top-left {
+        position: absolute;
+        top: 8px;
+        left: 16px;
+        color: rgb(66, 0, 128);
+        font-family: cursive;
+        /* position:sticky; */
+    }
+
+    .center {
+        position: absolute;
+        /* top: 50%; */
+        left: 50%;
+        transform: translate(-50%, -150%);
+        background:none;
+    }
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #card{
+        height:500px;
+    }
+</style>
+
+<body>
+    <div class="contai">
+        <h1 class="top-left"><img src="https://cdn-icons-png.flaticon.com/512/4019/4019820.png" height=30 width=30
+                alt="Logo"> Kiddily </h1>
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+            width=100% class="img-fluid" alt="Business">
+        <!-- <h1>dj</h1> -->
+    </div>
+    <form class="row g-3 needs-validation centered" novalidate>
+        <div class="col-md-4">
+            <label for="validationCustom01" class="form-label" style="color: rgb(112, 221, 216); font-size: 30px;">First
+                name</label>
+            <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustom02" class="form-label" style="color: rgb(112, 221, 216); font-size: 30px;">Last
+                name</label>
+            <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustomUsername" class="form-label"
+                style="color: rgb(112, 221, 216); font-size: 30px;">Username</label>
+            <div class="input-group has-validation">
+                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                <input type="text" class="form-control" id="validationCustomUsername"
+                    aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                    Please choose a username.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="validationCustom03" class="form-label"
+                style="color: rgb(112, 221, 216); font-size: 30px;">Password</label>
+            <input type="text" class="form-control" id="validationCustom03" required>
+            <div class="invalid-feedback">
+                Please provide a valid city.
+            </div>
+        </div>
+        
+        <div class="col-12">
+            <a href="#card" class="btn btn-primary">Sign Up</a>
+        </div>
+    </form>
+    <img src="https://www.resultsmanagementgroup.com/wp-content/uploads/2017/06/Business-wallpaper-HD-Free.jpg"
+        width=100% class="img-fluid" alt="Business">
+    <div class="card text-center center" id="card">
+        <div class="card-header">
+            Kiddily
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Business Solutions</h5>
+          <p class="card-text">Businesses today look for strategic partners who can help them not only in the optimisation of their IT infrastructure but can also support and advice them on how to meet their business objectives in the most cost-effective and efficient manner.
+        </p>
+          <a href="#" class="btn btn-primary">Contract</a>
+        </div>
+        <div class="card-footer text-muted">
+          2 days ago
+        </div>
+      </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+</html>
